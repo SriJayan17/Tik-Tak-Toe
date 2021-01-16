@@ -212,12 +212,16 @@ img {
     background: #333;
     color: #fff;
   }
+  .container {
+    padding: 1.5rem 0;
+  }
   #game-board h1 {
     font-size: 1.5rem;
   }
   #game-board #outer-box {
     height: 300px;
     width: 300px;
+    margin: 2rem auto;
   }
   #game-board #outer-box .inner-box {
     padding: 0;
@@ -228,7 +232,7 @@ img {
   }
   #game-board .result {
     font-size: 1.2rem;
-    top: 44.7%;
+    top: 43.5%;
   }
   #game-board #tie {
     top: 48%;
