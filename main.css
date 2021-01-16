@@ -44,6 +44,22 @@ img {
   text-align: center;
 }
 
+.btn {
+  position: absolute;
+  top: 37rem;
+  left: 43.5%;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  background: #333;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  display: none;
+}
+
 #main-navbar {
   padding: 1rem;
   display: -webkit-box;
@@ -235,7 +251,7 @@ img {
     top: 44.3%;
   }
   #game-board #tie {
-    top: 48%;
+    top: 44%;
   }
   #game-board .stat {
     padding: 2rem 1rem;
@@ -247,6 +263,11 @@ img {
   }
   #game-board .stat > *:last-child {
     border: none;
+  }
+  .btn {
+    top: 27rem;
+    left: 34%;
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

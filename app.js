@@ -27,15 +27,19 @@ function insertXO(e){
             }
         }
         else if(mark==='tie'){
-            document.querySelector('#tie').innerText="It's a Tie! Well played both Thanks for playing";
-            document.getElementById('gametie').children[2].innerText = '1';
+            document.querySelector('#tie').innerText = "It's a Tie! Well played both Thanks for playing.";
+            document.getElementById('rs').style.display='block';
+            let stat = document.getElementById('gametie').children[2];
+            stat.innerText = parseInt(stat.innerText)+1;
             document.querySelector('#tie').style.display = 'block';
             document.querySelector('#tie').style.opacity = '1';
             box.removeEventListener('click',insertXO);
         }
         else{
-            document.querySelector('#won').innerText = `Congradulation ${mark} has won the game! Thanks for playing`;
-            document.getElementById(`user${mark.toLowerCase()}`).children[2].innerText = '1';
+            document.querySelector('#won').innerText = `Congradulation ${mark} has won the game! Thanks for playing.`;
+            document.getElementById('rs').style.display='block';
+            let stat = document.getElementById(`user${mark.toLowerCase()}`).children[2];
+            stat.innerText =  parseInt(stat.innerText)+1;
             document.querySelector('#won').style.display = 'block';
             document.querySelector('#won').style.opacity = '1';
             box.removeEventListener('click',insertXO);
@@ -67,4 +71,21 @@ function win_check(sym){
     if(flag!==1){
         return 'tie';
     }
+}
+const tie = document.querySelector('#rs');
+
+tie.addEventListener('click',restart);
+
+function restart(){
+    box.addEventListener('click',insertXO);
+    document.querySelector('#tie').style.display='none';
+    document.querySelector('#won').style.display='none';
+    document.querySelector('#tie').style.opacity='0';
+    document.querySelector('#won').style.opacity='0';
+    const c = box.children;
+    const child = Array.from(c);
+    for(let i =0;i<child.length;i++){
+        child[i].children[0].innerText='';
+    }
+    document.getElementById('rs').style.display='none';
 }
