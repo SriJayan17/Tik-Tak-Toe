@@ -1,0 +1,218 @@
+// Reset
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Basic style
+
+body{
+    font-family: 'Lora', sans-serif;
+    line-height: 1.4;
+    color: #333;
+}
+
+h1,h2,h3{
+    margin-bottom: 0.75rem;
+}
+
+p{
+    margin: 0.5rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+// utilities
+
+.container{
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: #f4f4f4cb;
+}
+
+.text-center{
+    text-align: center;
+}
+
+// Navbar
+
+#main-navbar{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+        height: 70px;
+        width: 70px;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li a{
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            margin: 0 0.75rem 0 0.75rem;
+            font-weight: 800;
+            color: #191970;
+            border: 2px solid #301934;
+            border-radius: 35px;
+            transition: background 0.5s ease-in-out;
+            &:hover{
+                background: #333;
+                color: #fff;
+            }
+        }
+    }
+}
+// game board
+
+#game-board{
+    background: url('./img/gamebk.jpg') no-repeat center center/cover;
+    h1{
+        color: #301934;
+        font-weight: bold;
+    }
+    // height: 85vh;
+    #outer-box{
+        margin: 4rem auto;
+        display: grid;
+        grid-gap: 0;
+        height: 400px;
+        width: 400px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+        .inner-box{
+            border-bottom: 7px solid #444;
+            border-right: 7px solid #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:nth-child(3),
+            &:nth-child(6),
+            &:nth-child(9){
+                border-right: none;
+            }
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9){
+                border-bottom: none;
+            }
+            h3{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .result{
+        text-transform: none;
+        padding: 1rem;
+        position: absolute;
+        width: 100%;
+        top: 47%;
+        left: 0;
+        background: rgba(0,0,0,0.7);
+        text-align: center;
+        color: #fff;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+    .stat{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2rem;
+        background: #f4f4f4;
+        i{
+            padding: 1rem 0;
+        }
+
+        #userx{
+            i{
+                color: #FF2400;
+            }
+        }
+        #usero{
+            i{
+                color: #0437F2;
+            }
+        }
+        .stat-number{
+            font-size: 2rem;
+        }
+    }
+}
+
+@media(max-width:500px){
+    #main-navbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        ul{
+            margin-top: 1rem;
+            padding: 1.5rem 0 1rem 0;
+            border-top: 2px dotted #333;
+            li a{
+                font-size: 1rem;
+                padding: 1rem;
+                border:none;
+                transition: background 0.5s ease-in-out,
+                color 0.5s ease-in-out;
+                &:hover{
+                    background: #333;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    #game-board{
+        h1{
+            font-size: 1.5rem;
+        }
+        #outer-box{
+            height: 300px;
+            width: 300px;
+            .inner-box{
+                padding: 0;
+                h3{
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                }
+            }
+        }
+        .result{
+            font-size: 1.2rem;
+            top: 44.7%;
+        }
+        #tie{
+            top: 48%;
+        }
+
+        .stat{
+            padding: 2rem 1rem;
+            grid-template-columns: 1fr;
+            &>*{
+                border-bottom: 2px dotted #333;
+            }
+            &>*:last-child{
+                border: none;
+            }
+        }
+    }
+}

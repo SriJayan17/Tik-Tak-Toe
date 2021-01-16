@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/02bfdf0da3.js" crossorigin="anonymous"></script>    
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Tik Tak Toe Game</title>
+</head>
+<body>
+    <nav id="main-navbar">
+        <img src="./img/logo6.PNG" alt="">
+        <ul>
+            <li><a href="#">More&nbsp;Games</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="game-board">
+        <div class="container">
+            <h1 class="l-heading text-center">Welcome to Tik Tak Toe Game</h1>
+            <div id="outer-box">
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+                <div class="inner-box">
+                    <h3></h3>
+                </div>
+            </div>
+            <h1 id='tie' class="result"></h1>
+            <h1 id='won' class="result"></h1>
+        </div>
+        <div class="stat text-center">
+            <div id="userx">
+                <i class="fas fa-times-circle fa-2x"></i>
+                <h2>Player 'X'</h2>
+                <h3 class="stat-number">0</h3>
+            </div>
+            <div id="gametie">
+                <i class="fas fa-handshake fa-2x"></i>
+                <h2>Tie</h2>
+                <h3 class="stat-number">0</h3>
+            </div>
+            <div id="usero">
+                <i class="fas fa-dot-circle fa-2x"></i>
+                <h2>Player 'O'</h2>
+                <h3 class="stat-number">0</h3>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
